@@ -1,13 +1,13 @@
 name: "JMS 广告拦截 · anti-AD"
-desc: "anti-AD MRS 域名广告拦截，不修改 DNS 和节点"
+desc: "anti-AD 域名广告拦截"
 
 rule-providers:
   anti-ad:
     type: http
     behavior: domain
-    format: mrs
-    url: https://anti-ad.net/mihomo.mrs
-    path: ./rules/anti-ad.mrs
+    format: yaml
+    url: "https://anti-ad.net/clash.yaml"
+    path: ./rules/anti-ad-yaml.yaml
     interval: 86400
 
 rules:
