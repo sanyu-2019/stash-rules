@@ -1,0 +1,20 @@
+name: "JMS 基础路由"
+desc: "国内直连，国外代理，保留原始 DNS"
+
+proxy-groups:
+  - name: JMS-代理
+    type: select
+    include-all: true
+
+rules:
+  # 局域网直连
+  - GEOIP,LAN,DIRECT
+
+  # 中国域名直连
+  - DOMAIN-SUFFIX,cn,DIRECT
+
+  # 中国 IP 直连
+  - GEOIP,CN,DIRECT
+
+  # 其余流量走 JMS
+  - MATCH,JMS-代理
