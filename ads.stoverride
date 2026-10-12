@@ -1,0 +1,14 @@
+name: "JMS 广告拦截"
+desc: "MRS 域名广告拦截，不修改 DNS 和节点"
+
+rule-providers:
+  awa-ads:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Clash.mrs
+    path: ./rules/awa-ads.mrs
+    interval: 86400
+
+rules:
+  - RULE-SET,awa-ads,REJECT
